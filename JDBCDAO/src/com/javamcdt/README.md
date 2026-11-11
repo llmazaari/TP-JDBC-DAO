@@ -15,6 +15,11 @@ Sans architecture, tout le code SQL serait mélangé avec l'interface utilisateu
 *   **Fichier :** `Personnel.java`
 *   **Explication :** La classe `Personnel` sert à regrouper les données d'un employé dans un seul objet. Sans elle, le DAO devrait envoyer trois variables séparées (mat, nom, salaire), ce qui est difficile à gérer. Le DAO lit la base de données et crée un objet `Personnel` avec ces valeurs. L'application utilise ensuite cet objet unique sans se soucier de la base de données.
 *   (sert à faire correspondre les lignes d'une table de votre base de données à des objets Java.)
+*   Concrètement, une ligne de ta base de données :
+(9, "Khadija", 55000.0)
+
+Devient cet objet Java grâce à la classe :
+Personnel p = new Personnel(9, "Khadija", 55000.0);
 
 ### 2. L'Interface DAO (`package model.dao`)
 *   **Fichier :** `Dao.java`
